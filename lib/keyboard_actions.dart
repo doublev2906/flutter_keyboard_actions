@@ -459,6 +459,7 @@ class KeyboardActionstate extends State<KeyboardActions>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (!mounted) return;
     if (defaultTargetPlatform == TargetPlatform.android) {
       if (state == AppLifecycleState.paused) {
         FocusScope.of(context).requestFocus(FocusNode());
