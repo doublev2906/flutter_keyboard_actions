@@ -132,6 +132,7 @@ class KeyboardActionstate extends State<KeyboardActions>
 
   /// If the keyboard bar is on for the current platform
   bool get _isAvailable {
+    if (config == null) return false;
     return config!.keyboardActionsPlatform == KeyboardActionsPlatform.ALL ||
         (config!.keyboardActionsPlatform == KeyboardActionsPlatform.IOS &&
             PlatformCheck.isIOS) ||
